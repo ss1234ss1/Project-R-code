@@ -1,0 +1,7 @@
+library(ggplot2)
+
+mydata<-read.csv("data_set_3.csv")
+
+barchart<-ggplot(data=mydata, aes(x=Sleep, y=GPA, fill=Gender))+
+  geom_bar(stat="identity",position=position_dodge())
+barchart
