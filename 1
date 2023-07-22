@@ -1,0 +1,13 @@
+data <- read.csv("pnas.2209123120.sd01.csv")
+
+
+ggplot(data = data, aes(x = daytime_sleep, y = cum_gpa)) +
+  geom_point() +
+  labs(x = "Daytime Sleep (minutes)", y = "Cumulative GPA") 
+
+data <- data[data$daytime_sleep < 300,]
+ggplot(data = data, aes(x = daytime_sleep, y = cum_gpa)) +
+  geom_point() +
+  labs(x = "Daytime Sleep (minutes)", y = "Cumulative GPA") 
+  
+print(cor(data$daytime_sleep, data$cum_gpa))
